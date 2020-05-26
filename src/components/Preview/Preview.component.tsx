@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
-interface PreviewProps {
+export interface PreviewProps {
   title: string
   qandas: QandA[]
   prev: string
@@ -19,16 +19,22 @@ export const Preview = ({
   prevStep,
 }: PreviewProps) => (
   <>
-    <h1>{title}</h1>
-    {qandas.map(({ question, answer }) => (
-      <>
+    <h1 data-testid="preview-title">{title}</h1>
+    {qandas.map(({ question, answer }, key) => (
+      <Fragment key={key}>
         <h2>{question}</h2>
         <p>{answer}</p>
-      </>
+      </Fragment>
     ))}
 
     <div className="navigation">
-      <button onClick={prevStep} className="navigationLeft">{prev}</button>
+      <button
+        onClick={prevStep}
+        className="navigationLeft"
+        data-testid="button-prev"
+      >
+        {prev}
+      </button>
     </div>
   </>
 )

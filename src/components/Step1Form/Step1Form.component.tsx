@@ -1,7 +1,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 
-interface Step1FormProps {
+export interface Step1FormProps {
   label: string
   question: string
   next: string
@@ -31,14 +31,26 @@ export const Step1Form = ({
         ref={register({ required: true, minLength: 2, maxLength: 25 })}
         defaultValue={value}
         onChange={(e) => onChange(e.target.value)}
+        data-testid="input-name"
       />
 
       {errors.name &&
-      <div className="error">{errorMessage}</div>
+      <div
+        className="error"
+        data-testid="input-error"
+      >
+        {errorMessage}
+      </div>
       }
 
       <div className="navigation">
-        <button type="submit" className="navigationRight">{next}</button>
+        <button
+          type="submit"
+          className="navigationRight"
+          data-testid="button-next"
+        >
+          {next}
+        </button>
       </div>
     </form>
   )

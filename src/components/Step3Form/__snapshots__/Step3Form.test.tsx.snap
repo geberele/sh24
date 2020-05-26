@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Step3Form renders 1`] = `
+<DocumentFragment>
+  <form>
+    <h1>
+      What is your email address?
+    </h1>
+    <div
+      class="radio-buttons"
+    >
+      <div
+        class="radio-button"
+      >
+        <label
+          for="one"
+        >
+          STI Testing
+        </label>
+        <input
+          class="hidden"
+          data-testid="input-service"
+          id="one"
+          name="service"
+          type="radio"
+          value="one"
+        />
+      </div>
+      <div
+        class="radio-button"
+      >
+        <label
+          for="two"
+        >
+          Contraception
+        </label>
+        <input
+          class="hidden"
+          data-testid="input-service"
+          id="two"
+          name="service"
+          type="radio"
+          value="two"
+        />
+      </div>
+      <div
+        class="radio-button"
+      >
+        <label
+          for="three"
+        >
+          Other
+        </label>
+        <input
+          class="hidden"
+          data-testid="input-service"
+          id="three"
+          name="service"
+          type="radio"
+          value="three"
+        />
+      </div>
+    </div>
+    <div
+      class="navigation"
+    >
+      <button
+        class="navigationLeft"
+        data-testid="button-prev"
+      >
+        Back
+      </button>
+      <button
+        class="navigationRight"
+        data-testid="button-next"
+        type="submit"
+      >
+        Next
+      </button>
+    </div>
+  </form>
+</DocumentFragment>
+`;

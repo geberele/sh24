@@ -2,7 +2,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import cn from 'classnames'
 
-interface Step3FormProps {
+export interface Step3FormProps {
   question: string
   next: string
   prev: string
@@ -39,30 +39,48 @@ export const Step3Form = ({
         {options.map((option, key) => (
           <div
             key={key}
-            className={cn('radio-button', { 'selected': value === option.label })}
+            className={cn('radio-button', { 'selected': value === option.value })}
           >
             <label htmlFor={option.value}>{option.label}</label>
             <input
               type="radio"
               name="service"
-              value={option.label}
+              value={option.value}
               id={option.value}
               onChange={e => onChange(e.target.value)}
-              checked={value === option.label}
+              checked={value === option.value}
               ref={register({ required: true })}
-              className="hidden"
+              data-testid="input-service"
+              className={cn('hidden', { 'checked': value === option.value })}
             />
           </div>
         ))}
       </div>
 
       {errors.service &&
-        <div className="error">{errorMessage}</div>
+        <div
+          className="error"
+          data-testid="input-error"
+        >
+          {errorMessage}
+        </div>
       }
 
       <div className="navigation">
-        <button onClick={prevStep} className="navigationLeft">{prev}</button>
-        <button type="submit" className="navigationRight">{next}</button>
+        <button
+          onClick={prevStep}
+          className="navigationLeft"
+          data-testid="button-prev"
+        >
+          {prev}
+        </button>
+        <button
+          type="submit"
+          className="navigationRight"
+          data-testid="button-next"
+        >
+          {next}
+        </button>
       </div>
     </form>
   )

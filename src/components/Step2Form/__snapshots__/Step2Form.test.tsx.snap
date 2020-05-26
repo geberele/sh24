@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Step2Form renders 1`] = `
+<DocumentFragment>
+  <form>
+    <h1>
+      What is your email address?
+    </h1>
+    <label
+      for="email"
+    >
+      Email address
+    </label>
+    <input
+      data-testid="input-email"
+      name="email"
+      value=""
+    />
+    <div
+      class="navigation"
+    >
+      <button
+        class="navigationLeft"
+        data-testid="button-prev"
+      >
+        Back
+      </button>
+      <button
+        class="navigationRight"
+        data-testid="button-next"
+        type="submit"
+      >
+        Next
+      </button>
+    </div>
+  </form>
+</DocumentFragment>
+`;

@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Preview renders 1`] = `
+<DocumentFragment>
+  <h1>
+    Preview
+  </h1>
+  <h2>
+    What is your name?
+  </h2>
+  <p>
+    Mark
+  </p>
+  <h2>
+    What is your email address?
+  </h2>
+  <p>
+    test@example.com
+  </p>
+  <h2>
+    What service are you here for?
+  </h2>
+  <p>
+    Other
+  </p>
+  <div
+    class="navigation"
+  >
+    <button
+      class="navigationLeft"
+      data-testid="button-prev"
+    >
+      Back
+    </button>
+  </div>
+</DocumentFragment>
+`;

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 
-interface Step2FormProps {
+export interface Step2FormProps {
   label: string
   question: string
   next: string
@@ -41,15 +41,33 @@ export const Step2Form = ({
         })}
         defaultValue={value}
         onChange={(e) => onChange(e.target.value)}
+        data-testid="input-email"
       />
 
       {errors.email &&
-      <div className="error">{errorMessage}</div>
+      <div
+        className="error"
+        data-testid="input-error"
+      >
+        {errorMessage}
+      </div>
       }
 
       <div className="navigation">
-        <button onClick={prevStep} className="navigationLeft">{prev}</button>
-        <button type="submit" className="navigationRight">{next}</button>
+        <button
+          onClick={prevStep}
+          className="navigationLeft"
+          data-testid="button-prev"
+        >
+          {prev}
+        </button>
+        <button
+          type="submit"
+          className="navigationRight"
+          data-testid="button-next"
+        >
+          {next}
+        </button>
       </div>
     </form>
   )

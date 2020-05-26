@@ -5,11 +5,21 @@ import { Options, Step3Form } from '../Step3Form/Step3Form.component'
 import { Preview, QandA } from '../Preview/Preview.component'
 import { I18N } from './i18n/i18n.types'
 
-interface MultipleStepsFormProps {
+export interface MultipleStepsFormProps {
   language: string
 }
 
-export const MultipleStepsForm = (props: MultipleStepsFormProps) => {
+export const getOptionLabel = (value: string, options: Options[]): string => {
+  const selectedOption: Options[]  = options.filter(option => value === option.value)
+  return selectedOption.length > 0 ? selectedOption[0].label : ''
+}
+
+export const getOptionValue = (label: string, options: Options[]): string => {
+  const selectedOption: Options[]  = options.filter(option => label === option.label)
+  return selectedOption.length > 0 ? selectedOption[0].value : ''
+}
+
+export const MultipleStepsForm = (props: MultipleStepsFormProps): React.ReactElement => {
   const [step, setStep] = useState(1)
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -69,11 +79,11 @@ export const MultipleStepsForm = (props: MultipleStepsFormProps) => {
           question={i18n.question3}
           next={i18n.next}
           prev={i18n.prev}
-          value={service}
+          value={getOptionValue(service, options)}
           options={options}
           nextStep={() => setStep(4)}
           prevStep={() => setStep(2)}
-          onChange={(value: string) => setService(value)}
+          onChange={(value: string) => setService(getOptionLabel(value, options))}
           errorMessage={i18n.errorMessage3}
         />
       )
