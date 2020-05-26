@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## REQUIREMENTS
 - Install NodeJs in your machine.
-- Execute the following command to install the libraries and compile the typescript files: `npm i && npm run build`
+- Execute the following command to install the libraries and compile the typescript files: `npm i && npm run build-no-prod`
 
 ## HOW TO RUN IT
 - Execute the command `npm run start`

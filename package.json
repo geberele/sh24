@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build-no-prod": "env NODE_ENV=\"no-production\" npm run build",
     "start": "next start",
     "test": "jest",
     "tslint": "tslint -c tslint.json --project .",
